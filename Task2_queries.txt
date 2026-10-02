@@ -1,0 +1,44 @@
+Use the family facts from earlier in this lab: https://github.com/rfalnsari/04-Variables-in-Prolog 
+
+Write and run a query that:
+1.shows the names of all females.
+
+38 ?- female(X).
+X = sara ;
+X = nora.
+
+2.shows whether there is any male.
+
+40 ?- male(X).
+X = ali ;
+X = ahmad ;
+X = muhammad ;
+X = faisal ;
+X = hassan ;
+X = khan.
+
+I also searched for this syntax that only returns true/false:
+
+40 ?- once(male(_)).
+true.
+
+3.shows the grandparent of Faisal.
+
+41 ?- parent(X, muhammad), parent(muhammad, faisal).
+X = ali.
+
+4.shows all daughters of Ahmad.
+
+43 ?- female(X), parent(ahmad, X).
+X = sara ;
+X = nora.
+
+5.shows whether Ahmad and Muhammad have a common parent.
+
+44 ?- parent(X, muhammad), parent(X, ahmad).
+X = ali.
+
+6.shows whether Khan is the brother of Nora
+
+46 ?-  parent(X, khan), parent(X, nora).
+X = ahmad.

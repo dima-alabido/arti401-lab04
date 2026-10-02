@@ -1,0 +1,52 @@
+Write a	query for each
+• Evaluate the following Prolog unification query, and for each query, Write the Prolog result and Explain briefly why 
+the terms can or cannot be unified.
+
+47 ?- house = house.
+true.
+ The result is true because the two atoms are identical.
+
+47 ?- house = abc.
+false.
+The result is false because the atoms are not identical.
+
+48 ?- edge(a, b) = edge(C, b).
+C = a.
+The result is C = a. Here the variable 'C' is instantiated (takes the value of 'a'), as the two predicates and the second value are identical.
+
+49 ?- edge(a,d) = edge(C,B).
+C = a,
+B = d.
+The result is C = a and B = d. The two variables get instantiated (taking the values of 'a' and 'd'), as the predicates are identical.
+
+50 ?- edge(C,B) = edge(a,d).
+C = a,
+B = d.
+The result is C = a and B = d. The two variables get instantiated (taking the values of 'a' and 'd') but in reverse order, as the predicates are identical.
+
+51 ?- edge(A,f(g,h)) = edge(a,B).
+A = a,
+B = f(g, h).
+The result is A = a and B = f(g, h). The two variables get instantiated: A takes 'a', and B takes f(g, h), making both sides identical.
+
+52 ?- edge(A,A) = edge(b,c).
+false.
+The result is false because the variable 'A' cannot be intialized with two values.
+
+53 ?- edge(A,A) = edge(b,b).
+A = b.
+The result is A = b. The variable A appears twice and gets instantiated with 'b' in both positions, making both sides identical.
+
+54 ?- A = B, B = f.
+A = B, B = f.
+The result is A = B and B = f. A and B are unified, so when B gets instantiated with 'f', A also takes the value 'f'.
+
+55 ?- A = B, B = f, A = e.
+false.
+The result is false. A and B are unified, so when B takes 'f', A also takes 'f'. The last unification fails because 'f' and 'e' are different.
+
+
+
+
+
+
